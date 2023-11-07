@@ -57,6 +57,7 @@ namespace Employees_TestTaskWinFormsApp
             this.refreshButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.showDBButton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.addEmpTabPage.SuspendLayout();
@@ -116,7 +117,7 @@ namespace Employees_TestTaskWinFormsApp
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(811, 593);
+            this.dataGridView.Size = new System.Drawing.Size(813, 593);
             this.dataGridView.TabIndex = 4;
             // 
             // tabControl1
@@ -132,6 +133,7 @@ namespace Employees_TestTaskWinFormsApp
             // 
             // addEmpTabPage
             // 
+            this.addEmpTabPage.Controls.Add(this.label6);
             this.addEmpTabPage.Controls.Add(this.salaryLabel);
             this.addEmpTabPage.Controls.Add(this.salaryTextBox);
             this.addEmpTabPage.Controls.Add(this.yearOfBirthLabel);
@@ -154,7 +156,7 @@ namespace Employees_TestTaskWinFormsApp
             // salaryLabel
             // 
             this.salaryLabel.AutoSize = true;
-            this.salaryLabel.Location = new System.Drawing.Point(21, 192);
+            this.salaryLabel.Location = new System.Drawing.Point(21, 261);
             this.salaryLabel.Name = "salaryLabel";
             this.salaryLabel.Size = new System.Drawing.Size(72, 17);
             this.salaryLabel.TabIndex = 11;
@@ -163,7 +165,7 @@ namespace Employees_TestTaskWinFormsApp
             // salaryTextBox
             // 
             this.salaryTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.salaryTextBox.Location = new System.Drawing.Point(201, 187);
+            this.salaryTextBox.Location = new System.Drawing.Point(201, 256);
             this.salaryTextBox.Name = "salaryTextBox";
             this.salaryTextBox.Size = new System.Drawing.Size(200, 22);
             this.salaryTextBox.TabIndex = 10;
@@ -171,7 +173,7 @@ namespace Employees_TestTaskWinFormsApp
             // yearOfBirthLabel
             // 
             this.yearOfBirthLabel.AutoSize = true;
-            this.yearOfBirthLabel.Location = new System.Drawing.Point(21, 151);
+            this.yearOfBirthLabel.Location = new System.Drawing.Point(21, 220);
             this.yearOfBirthLabel.Name = "yearOfBirthLabel";
             this.yearOfBirthLabel.Size = new System.Drawing.Size(101, 17);
             this.yearOfBirthLabel.TabIndex = 9;
@@ -180,7 +182,7 @@ namespace Employees_TestTaskWinFormsApp
             // yearOfBirthTextBox
             // 
             this.yearOfBirthTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.yearOfBirthTextBox.Location = new System.Drawing.Point(201, 146);
+            this.yearOfBirthTextBox.Location = new System.Drawing.Point(201, 215);
             this.yearOfBirthTextBox.Name = "yearOfBirthTextBox";
             this.yearOfBirthTextBox.Size = new System.Drawing.Size(200, 22);
             this.yearOfBirthTextBox.TabIndex = 8;
@@ -188,7 +190,7 @@ namespace Employees_TestTaskWinFormsApp
             // positionLabel
             // 
             this.positionLabel.AutoSize = true;
-            this.positionLabel.Location = new System.Drawing.Point(21, 108);
+            this.positionLabel.Location = new System.Drawing.Point(21, 177);
             this.positionLabel.Name = "positionLabel";
             this.positionLabel.Size = new System.Drawing.Size(81, 17);
             this.positionLabel.TabIndex = 7;
@@ -197,7 +199,7 @@ namespace Employees_TestTaskWinFormsApp
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(21, 64);
+            this.lastNameLabel.Location = new System.Drawing.Point(21, 133);
             this.lastNameLabel.Name = "lastNameLabel";
             this.lastNameLabel.Size = new System.Drawing.Size(70, 17);
             this.lastNameLabel.TabIndex = 6;
@@ -206,7 +208,7 @@ namespace Employees_TestTaskWinFormsApp
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(21, 21);
+            this.nameLabel.Location = new System.Drawing.Point(21, 90);
             this.nameLabel.Name = "nameLabel";
             this.nameLabel.Size = new System.Drawing.Size(35, 17);
             this.nameLabel.TabIndex = 5;
@@ -215,7 +217,7 @@ namespace Employees_TestTaskWinFormsApp
             // positionTextBox
             // 
             this.positionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.positionTextBox.Location = new System.Drawing.Point(201, 103);
+            this.positionTextBox.Location = new System.Drawing.Point(201, 172);
             this.positionTextBox.Name = "positionTextBox";
             this.positionTextBox.Size = new System.Drawing.Size(200, 22);
             this.positionTextBox.TabIndex = 4;
@@ -223,7 +225,7 @@ namespace Employees_TestTaskWinFormsApp
             // lastNameTextBox
             // 
             this.lastNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lastNameTextBox.Location = new System.Drawing.Point(201, 61);
+            this.lastNameTextBox.Location = new System.Drawing.Point(201, 130);
             this.lastNameTextBox.Name = "lastNameTextBox";
             this.lastNameTextBox.Size = new System.Drawing.Size(200, 22);
             this.lastNameTextBox.TabIndex = 3;
@@ -231,7 +233,7 @@ namespace Employees_TestTaskWinFormsApp
             // nameTextBox
             // 
             this.nameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nameTextBox.Location = new System.Drawing.Point(201, 17);
+            this.nameTextBox.Location = new System.Drawing.Point(201, 86);
             this.nameTextBox.Name = "nameTextBox";
             this.nameTextBox.Size = new System.Drawing.Size(200, 22);
             this.nameTextBox.TabIndex = 2;
@@ -352,6 +354,18 @@ namespace Employees_TestTaskWinFormsApp
             this.showDBButton.UseVisualStyleBackColor = true;
             this.showDBButton.Click += new System.EventHandler(this.showDBButton_Click);
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(104, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(214, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Добавить сотрудника";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -408,6 +422,7 @@ namespace Employees_TestTaskWinFormsApp
         private System.Windows.Forms.Button FindButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
     }
 }
 

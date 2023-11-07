@@ -150,6 +150,9 @@ namespace Employees_TestTaskWinFormsApp
                 SqlDataReader sqlDataReader = command.ExecuteReader();
                 DataTable globalDataTable = new DataTable();
                 globalDataTable.Load(sqlDataReader);
+
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dataGridView.ScrollBars = ScrollBars.Both;
                 dataGridView.DataSource = globalDataTable;
 
                 this.dataTable = globalDataTable;
