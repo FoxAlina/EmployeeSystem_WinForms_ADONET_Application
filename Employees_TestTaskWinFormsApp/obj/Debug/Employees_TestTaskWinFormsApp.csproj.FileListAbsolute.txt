@@ -78,3 +78,7 @@ E:\Тестовое\Employees_TestTaskWinFormsApp\Employees_TestTaskWinFormsApp\
 E:\Тестовое\Employees_TestTaskWinFormsApp\Employees_TestTaskWinFormsApp\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
 E:\Тестовое\Employees_TestTaskWinFormsApp\Employees_TestTaskWinFormsApp\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
 E:\Тестовое\Employees_TestTaskWinFormsApp\Employees_TestTaskWinFormsApp\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+E:\Тестовое\Employees_TestTaskWinFormsApp\Employees_TestTaskWinFormsApp\bin\Debug\Employees_TestTaskWinFormsApp.exe.manifest
+E:\Тестовое\Employees_TestTaskWinFormsApp\Employees_TestTaskWinFormsApp\bin\Debug\Employees_TestTaskWinFormsApp.application
+E:\Тестовое\Employees_TestTaskWinFormsApp\Employees_TestTaskWinFormsApp\obj\Debug\Employees_TestTaskWinFormsApp.exe.manifest
+E:\Тестовое\Employees_TestTaskWinFormsApp\Employees_TestTaskWinFormsApp\obj\Debug\Employees_TestTaskWinFormsApp.application

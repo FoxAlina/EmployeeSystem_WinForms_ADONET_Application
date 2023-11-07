@@ -15,7 +15,10 @@ namespace Employees_TestTaskWinFormsApp
     public partial class Form1 : Form
     {
         private SqlConnection connection = new SqlConnection();
-        private const string connectionString = "Server=(local); Database=Employees; User=OpenUser; Password=openuser;";
+        //private string connectionString = "Server=(local); Database=Employees; User=OpenUser; Password=openuser;";
+        private string connectionString = "Server=(local); Database=Employees; Integrated Security=SSPI;";
+        private string tableName = "EmployeeInfo";
+
         private SqlCommand command;
 
         private DataTable dataTable;
@@ -78,7 +81,7 @@ namespace Employees_TestTaskWinFormsApp
 
             try
             {
-                string query = "Insert into EmployeeInfo values ('"
+                string query = "Insert into " + tableName + " values ('"
                     + nameTextBox.Text + "','"
                     + lastNameTextBox.Text + "','"
                     + positionTextBox.Text + "','"
@@ -107,7 +110,7 @@ namespace Employees_TestTaskWinFormsApp
             command = connection.CreateCommand();
             try
             {
-                string query = "select * from EmployeeInfo;";
+                string query = "select * from " + tableName + ";";
                 command.CommandText = query;
 
                 connection.Open();
@@ -141,7 +144,7 @@ namespace Employees_TestTaskWinFormsApp
             try
             {
                 if (string.IsNullOrEmpty(query))
-                    query = "select * from EmployeeInfo;";
+                    query = "select * from " + tableName + ";";
 
                 command.CommandText = query;
 
@@ -222,7 +225,10 @@ namespace Employees_TestTaskWinFormsApp
         private void deleteBtn_Click(object sender, EventArgs e)
         {
             if (DeleteSelectedEmployees())
+            {
                 MessageBox.Show("Employee deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SetSelectByPositionComboBoxValues();
+            }
 
             RefreshDataGridView(string.Empty);
         }
@@ -269,7 +275,7 @@ namespace Employees_TestTaskWinFormsApp
             try
             {
                 //string query = "Delete from EmployeeInfo where Name='" + employeeName + "'and LastName='" + employeeLastName + "';";
-                string query = "Delete from EmployeeInfo where ID=" + employeeID + ";";
+                string query = "Delete from " + tableName + " where ID=" + employeeID + ";";
                 command.CommandText = query;
                 connection.Open();
                 command.ExecuteScalar();
@@ -303,7 +309,7 @@ namespace Employees_TestTaskWinFormsApp
                 string employeePosition = Convert.ToString(row.Row["Position"]);
                 if (!string.IsNullOrEmpty(employeePosition))
                 {
-                    string query = "select * from EmployeeInfo where Position='" + employeePosition + "';";
+                    string query = "select * from " + tableName + " where Position='" + employeePosition + "';";
                     RefreshDataGridView(query);
                 }
             }

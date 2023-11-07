@@ -36,6 +36,7 @@ namespace Employees_TestTaskWinFormsApp
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.addEmpTabPage = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.salaryLabel = new System.Windows.Forms.Label();
             this.salaryTextBox = new System.Windows.Forms.TextBox();
             this.yearOfBirthLabel = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@ namespace Employees_TestTaskWinFormsApp
             this.refreshButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.showDBButton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.addEmpTabPage.SuspendLayout();
@@ -67,17 +67,17 @@ namespace Employees_TestTaskWinFormsApp
             // selectByPositionComboBox
             // 
             this.selectByPositionComboBox.FormattingEnabled = true;
-            this.selectByPositionComboBox.Location = new System.Drawing.Point(166, 16);
+            this.selectByPositionComboBox.Location = new System.Drawing.Point(179, 16);
             this.selectByPositionComboBox.Name = "selectByPositionComboBox";
-            this.selectByPositionComboBox.Size = new System.Drawing.Size(292, 24);
+            this.selectByPositionComboBox.Size = new System.Drawing.Size(291, 24);
             this.selectByPositionComboBox.TabIndex = 0;
             // 
             // addBtn
             // 
             this.addBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addBtn.Location = new System.Drawing.Point(326, 432);
+            this.addBtn.Location = new System.Drawing.Point(304, 432);
             this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(75, 25);
+            this.addBtn.Size = new System.Drawing.Size(97, 25);
             this.addBtn.TabIndex = 1;
             this.addBtn.Text = "Добавить";
             this.addBtn.UseVisualStyleBackColor = true;
@@ -152,6 +152,18 @@ namespace Employees_TestTaskWinFormsApp
             this.addEmpTabPage.TabIndex = 0;
             this.addEmpTabPage.Text = "Добавить сотрудника";
             this.addEmpTabPage.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label6.Location = new System.Drawing.Point(104, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(214, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Добавить сотрудника";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // salaryLabel
             // 
@@ -327,9 +339,9 @@ namespace Employees_TestTaskWinFormsApp
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(464, 15);
+            this.refreshButton.Location = new System.Drawing.Point(488, 15);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(81, 25);
+            this.refreshButton.Size = new System.Drawing.Size(96, 25);
             this.refreshButton.TabIndex = 6;
             this.refreshButton.Text = "Показать";
             this.refreshButton.UseVisualStyleBackColor = true;
@@ -340,31 +352,19 @@ namespace Employees_TestTaskWinFormsApp
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(21, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 17);
+            this.label1.Size = new System.Drawing.Size(143, 17);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Выбрать должность";
+            this.label1.Text = "Выбрать должность:";
             // 
             // showDBButton
             // 
-            this.showDBButton.Location = new System.Drawing.Point(575, 15);
+            this.showDBButton.Location = new System.Drawing.Point(604, 15);
             this.showDBButton.Name = "showDBButton";
-            this.showDBButton.Size = new System.Drawing.Size(123, 25);
+            this.showDBButton.Size = new System.Drawing.Size(139, 25);
             this.showDBButton.TabIndex = 13;
             this.showDBButton.Text = "Снять фильтр";
             this.showDBButton.UseVisualStyleBackColor = true;
             this.showDBButton.Click += new System.EventHandler(this.showDBButton_Click);
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(104, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(214, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Добавить сотрудника";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
