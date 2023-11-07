@@ -66,9 +66,9 @@ namespace Employees_TestTaskWinFormsApp
             // selectByPositionComboBox
             // 
             this.selectByPositionComboBox.FormattingEnabled = true;
-            this.selectByPositionComboBox.Location = new System.Drawing.Point(141, 16);
+            this.selectByPositionComboBox.Location = new System.Drawing.Point(166, 16);
             this.selectByPositionComboBox.Name = "selectByPositionComboBox";
-            this.selectByPositionComboBox.Size = new System.Drawing.Size(276, 24);
+            this.selectByPositionComboBox.Size = new System.Drawing.Size(292, 24);
             this.selectByPositionComboBox.TabIndex = 0;
             // 
             // addBtn
@@ -78,7 +78,7 @@ namespace Employees_TestTaskWinFormsApp
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 25);
             this.addBtn.TabIndex = 1;
-            this.addBtn.Text = "Add";
+            this.addBtn.Text = "Добавить";
             this.addBtn.UseVisualStyleBackColor = true;
             this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
@@ -89,7 +89,7 @@ namespace Employees_TestTaskWinFormsApp
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(256, 26);
             this.deleteBtn.TabIndex = 2;
-            this.deleteBtn.Text = "Delete Chosen";
+            this.deleteBtn.Text = "Удалить выбранное";
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
@@ -100,7 +100,7 @@ namespace Employees_TestTaskWinFormsApp
             this.reportBtn.Name = "reportBtn";
             this.reportBtn.Size = new System.Drawing.Size(100, 25);
             this.reportBtn.TabIndex = 3;
-            this.reportBtn.Text = "Report";
+            this.reportBtn.Text = "Отчёт";
             this.reportBtn.UseVisualStyleBackColor = true;
             this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
@@ -148,7 +148,7 @@ namespace Employees_TestTaskWinFormsApp
             this.addEmpTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.addEmpTabPage.Size = new System.Drawing.Size(424, 463);
             this.addEmpTabPage.TabIndex = 0;
-            this.addEmpTabPage.Text = "Add Employee";
+            this.addEmpTabPage.Text = "Добавить сотрудника";
             this.addEmpTabPage.UseVisualStyleBackColor = true;
             // 
             // salaryLabel
@@ -156,9 +156,9 @@ namespace Employees_TestTaskWinFormsApp
             this.salaryLabel.AutoSize = true;
             this.salaryLabel.Location = new System.Drawing.Point(21, 192);
             this.salaryLabel.Name = "salaryLabel";
-            this.salaryLabel.Size = new System.Drawing.Size(114, 17);
+            this.salaryLabel.Size = new System.Drawing.Size(72, 17);
             this.salaryLabel.TabIndex = 11;
-            this.salaryLabel.Text = "Amount of salary";
+            this.salaryLabel.Text = "Зарплата";
             // 
             // salaryTextBox
             // 
@@ -173,9 +173,9 @@ namespace Employees_TestTaskWinFormsApp
             this.yearOfBirthLabel.AutoSize = true;
             this.yearOfBirthLabel.Location = new System.Drawing.Point(21, 151);
             this.yearOfBirthLabel.Name = "yearOfBirthLabel";
-            this.yearOfBirthLabel.Size = new System.Drawing.Size(86, 17);
+            this.yearOfBirthLabel.Size = new System.Drawing.Size(101, 17);
             this.yearOfBirthLabel.TabIndex = 9;
-            this.yearOfBirthLabel.Text = "Year of birth";
+            this.yearOfBirthLabel.Text = "Год рождения";
             // 
             // yearOfBirthTextBox
             // 
@@ -190,27 +190,27 @@ namespace Employees_TestTaskWinFormsApp
             this.positionLabel.AutoSize = true;
             this.positionLabel.Location = new System.Drawing.Point(21, 108);
             this.positionLabel.Name = "positionLabel";
-            this.positionLabel.Size = new System.Drawing.Size(107, 17);
+            this.positionLabel.Size = new System.Drawing.Size(81, 17);
             this.positionLabel.TabIndex = 7;
-            this.positionLabel.Text = "Position at work";
+            this.positionLabel.Text = "Должность";
             // 
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
             this.lastNameLabel.Location = new System.Drawing.Point(21, 64);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(76, 17);
+            this.lastNameLabel.Size = new System.Drawing.Size(70, 17);
             this.lastNameLabel.TabIndex = 6;
-            this.lastNameLabel.Text = "Last Name";
+            this.lastNameLabel.Text = "Фамилия";
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
             this.nameLabel.Location = new System.Drawing.Point(21, 21);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(45, 17);
+            this.nameLabel.Size = new System.Drawing.Size(35, 17);
             this.nameLabel.TabIndex = 5;
-            this.nameLabel.Text = "Name";
+            this.nameLabel.Text = "Имя";
             // 
             // positionTextBox
             // 
@@ -251,7 +251,7 @@ namespace Employees_TestTaskWinFormsApp
             this.finddeleteEmpTabPage.Padding = new System.Windows.Forms.Padding(3);
             this.finddeleteEmpTabPage.Size = new System.Drawing.Size(424, 463);
             this.finddeleteEmpTabPage.TabIndex = 1;
-            this.finddeleteEmpTabPage.Text = "Find & Delete Employee";
+            this.finddeleteEmpTabPage.Text = "Найти и Удалить сотрудника";
             this.finddeleteEmpTabPage.UseVisualStyleBackColor = true;
             // 
             // label5
@@ -261,9 +261,9 @@ namespace Employees_TestTaskWinFormsApp
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label5.Location = new System.Drawing.Point(104, 317);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(217, 20);
+            this.label5.Size = new System.Drawing.Size(203, 20);
             this.label5.TabIndex = 13;
-            this.label5.Text = "Delete Employee Record";
+            this.label5.Text = "Удалить сотрудника";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
@@ -273,9 +273,9 @@ namespace Employees_TestTaskWinFormsApp
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label4.Location = new System.Drawing.Point(104, 38);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(198, 20);
+            this.label4.Size = new System.Drawing.Size(181, 20);
             this.label4.TabIndex = 12;
-            this.label4.Text = "Find Employee Record";
+            this.label4.Text = "Найти сотрудника";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FindButton
@@ -285,7 +285,7 @@ namespace Employees_TestTaskWinFormsApp
             this.FindButton.Name = "FindButton";
             this.FindButton.Size = new System.Drawing.Size(256, 26);
             this.FindButton.TabIndex = 11;
-            this.FindButton.Text = "Find";
+            this.FindButton.Text = "Найти";
             this.FindButton.UseVisualStyleBackColor = true;
             this.FindButton.Click += new System.EventHandler(this.FindButton_Click);
             // 
@@ -294,18 +294,18 @@ namespace Employees_TestTaskWinFormsApp
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(32, 143);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(76, 17);
+            this.label2.Size = new System.Drawing.Size(70, 17);
             this.label2.TabIndex = 10;
-            this.label2.Text = "Last Name";
+            this.label2.Text = "Фамилия";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(32, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.Size = new System.Drawing.Size(35, 17);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Name";
+            this.label3.Text = "Имя";
             // 
             // employeeLastNameFindTextBox
             // 
@@ -325,11 +325,11 @@ namespace Employees_TestTaskWinFormsApp
             // 
             // refreshButton
             // 
-            this.refreshButton.Location = new System.Drawing.Point(423, 16);
+            this.refreshButton.Location = new System.Drawing.Point(464, 15);
             this.refreshButton.Name = "refreshButton";
-            this.refreshButton.Size = new System.Drawing.Size(75, 25);
+            this.refreshButton.Size = new System.Drawing.Size(81, 25);
             this.refreshButton.TabIndex = 6;
-            this.refreshButton.Text = "Refresh";
+            this.refreshButton.Text = "Показать";
             this.refreshButton.UseVisualStyleBackColor = true;
             this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
             // 
@@ -338,17 +338,17 @@ namespace Employees_TestTaskWinFormsApp
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(21, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(114, 17);
+            this.label1.Size = new System.Drawing.Size(139, 17);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Show employees";
+            this.label1.Text = "Выбрать должность";
             // 
             // showDBButton
             // 
-            this.showDBButton.Location = new System.Drawing.Point(534, 16);
+            this.showDBButton.Location = new System.Drawing.Point(575, 15);
             this.showDBButton.Name = "showDBButton";
-            this.showDBButton.Size = new System.Drawing.Size(75, 25);
+            this.showDBButton.Size = new System.Drawing.Size(123, 25);
             this.showDBButton.TabIndex = 13;
-            this.showDBButton.Text = "All";
+            this.showDBButton.Text = "Снять фильтр";
             this.showDBButton.UseVisualStyleBackColor = true;
             this.showDBButton.Click += new System.EventHandler(this.showDBButton_Click);
             // 
