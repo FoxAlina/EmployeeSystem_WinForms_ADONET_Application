@@ -58,6 +58,7 @@ namespace Employees_TestTaskWinFormsApp
             this.refreshButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.showDBButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.addEmpTabPage.SuspendLayout();
@@ -86,7 +87,7 @@ namespace Employees_TestTaskWinFormsApp
             // deleteBtn
             // 
             this.deleteBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.deleteBtn.Location = new System.Drawing.Point(82, 379);
+            this.deleteBtn.Location = new System.Drawing.Point(82, 431);
             this.deleteBtn.Name = "deleteBtn";
             this.deleteBtn.Size = new System.Drawing.Size(256, 26);
             this.deleteBtn.TabIndex = 2;
@@ -128,7 +129,7 @@ namespace Employees_TestTaskWinFormsApp
             this.tabControl1.Location = new System.Drawing.Point(841, 61);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(432, 492);
+            this.tabControl1.Size = new System.Drawing.Size(432, 544);
             this.tabControl1.TabIndex = 5;
             // 
             // addEmpTabPage
@@ -252,6 +253,7 @@ namespace Employees_TestTaskWinFormsApp
             // 
             // finddeleteEmpTabPage
             // 
+            this.finddeleteEmpTabPage.Controls.Add(this.label7);
             this.finddeleteEmpTabPage.Controls.Add(this.label5);
             this.finddeleteEmpTabPage.Controls.Add(this.label4);
             this.finddeleteEmpTabPage.Controls.Add(this.FindButton);
@@ -263,7 +265,7 @@ namespace Employees_TestTaskWinFormsApp
             this.finddeleteEmpTabPage.Location = new System.Drawing.Point(4, 25);
             this.finddeleteEmpTabPage.Name = "finddeleteEmpTabPage";
             this.finddeleteEmpTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.finddeleteEmpTabPage.Size = new System.Drawing.Size(424, 463);
+            this.finddeleteEmpTabPage.Size = new System.Drawing.Size(424, 515);
             this.finddeleteEmpTabPage.TabIndex = 1;
             this.finddeleteEmpTabPage.Text = "Найти и Удалить сотрудника";
             this.finddeleteEmpTabPage.UseVisualStyleBackColor = true;
@@ -285,7 +287,7 @@ namespace Employees_TestTaskWinFormsApp
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(104, 38);
+            this.label4.Location = new System.Drawing.Point(104, 32);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(181, 20);
             this.label4.TabIndex = 12;
@@ -294,8 +296,8 @@ namespace Employees_TestTaskWinFormsApp
             // 
             // FindButton
             // 
-            this.FindButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.FindButton.Location = new System.Drawing.Point(82, 197);
+            this.FindButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.FindButton.Location = new System.Drawing.Point(82, 175);
             this.FindButton.Name = "FindButton";
             this.FindButton.Size = new System.Drawing.Size(256, 26);
             this.FindButton.TabIndex = 11;
@@ -306,7 +308,7 @@ namespace Employees_TestTaskWinFormsApp
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 143);
+            this.label2.Location = new System.Drawing.Point(33, 123);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 17);
             this.label2.TabIndex = 10;
@@ -315,7 +317,7 @@ namespace Employees_TestTaskWinFormsApp
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 100);
+            this.label3.Location = new System.Drawing.Point(33, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 17);
             this.label3.TabIndex = 9;
@@ -324,7 +326,7 @@ namespace Employees_TestTaskWinFormsApp
             // employeeLastNameFindTextBox
             // 
             this.employeeLastNameFindTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.employeeLastNameFindTextBox.Location = new System.Drawing.Point(198, 140);
+            this.employeeLastNameFindTextBox.Location = new System.Drawing.Point(199, 120);
             this.employeeLastNameFindTextBox.Name = "employeeLastNameFindTextBox";
             this.employeeLastNameFindTextBox.Size = new System.Drawing.Size(200, 22);
             this.employeeLastNameFindTextBox.TabIndex = 8;
@@ -332,7 +334,7 @@ namespace Employees_TestTaskWinFormsApp
             // employeeNameFindTextBox
             // 
             this.employeeNameFindTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.employeeNameFindTextBox.Location = new System.Drawing.Point(198, 96);
+            this.employeeNameFindTextBox.Location = new System.Drawing.Point(199, 82);
             this.employeeNameFindTextBox.Name = "employeeNameFindTextBox";
             this.employeeNameFindTextBox.Size = new System.Drawing.Size(200, 22);
             this.employeeNameFindTextBox.TabIndex = 7;
@@ -365,6 +367,17 @@ namespace Employees_TestTaskWinFormsApp
             this.showDBButton.Text = "Снять фильтр";
             this.showDBButton.UseVisualStyleBackColor = true;
             this.showDBButton.Click += new System.EventHandler(this.showDBButton_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(54, 362);
+            this.label7.MaximumSize = new System.Drawing.Size(350, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(306, 34);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Выберите строку с сотрудником, после чего нажмите \"Удалить выбранное\"";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
@@ -423,6 +436,7 @@ namespace Employees_TestTaskWinFormsApp
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }
 

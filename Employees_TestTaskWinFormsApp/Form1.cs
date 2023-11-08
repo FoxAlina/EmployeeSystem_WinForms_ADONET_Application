@@ -15,9 +15,9 @@ namespace Employees_TestTaskWinFormsApp
     public partial class Form1 : Form
     {
         private SqlConnection connection = new SqlConnection();
-        //private string connectionString = "Server=(local); Database=Employees; User=OpenUser; Password=openuser;";
-        private string connectionString = "Server=(local); Database=Employees; Integrated Security=SSPI;";
-        private string tableName = "EmployeeInfo";
+        //private const string connectionString = "Server=(local); Database=Employees; User=OpenUser; Password=openuser;";
+        private const string connectionString = "Server=(local); Database=Employees; Integrated Security=SSPI;";
+        private const string tableName = "EmployeeInfo";
 
         private SqlCommand command;
 
@@ -34,12 +34,6 @@ namespace Employees_TestTaskWinFormsApp
             SetSelectByPositionComboBoxValues();
         }
 
-        private void ShowErrorMessageBox(string message)
-        {
-            string caption = "Error";
-            MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
-
         private void addBtn_Click(object sender, EventArgs e)
         {
             AddNewEmployee();
@@ -48,22 +42,51 @@ namespace Employees_TestTaskWinFormsApp
             CleanAddEmployeeTextFields();
         }
 
-        private void CleanAddEmployeeTextFields()
+        private void deleteBtn_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(nameTextBox.Text) ||
-                !string.IsNullOrEmpty(lastNameTextBox.Text) ||
-                !string.IsNullOrEmpty(positionTextBox.Text) ||
-                !string.IsNullOrEmpty(yearOfBirthTextBox.Text) ||
-                !string.IsNullOrEmpty(salaryTextBox.Text))
+            if (DeleteSelectedEmployees())
             {
-                nameTextBox.Text = string.Empty;
-                lastNameTextBox.Text = string.Empty;
-                positionTextBox.Text = string.Empty;
-                yearOfBirthTextBox.Text = string.Empty;
-                salaryTextBox.Text = string.Empty;
+                MessageBox.Show("Employee deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                SetSelectByPositionComboBoxValues();
+            }
+
+            RefreshDataGridView(string.Empty);
+        }
+
+        private void FindButton_Click(object sender, EventArgs e)
+        {
+            SelectEmployeeRow();
+        }
+        private void showDBButton_Click(object sender, EventArgs e)
+        {
+            RefreshDataGridView(string.Empty);
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            RefreshDataGridView(string.Empty);
+            var selectedRow = selectByPositionComboBox.SelectedItem;
+            if (selectedRow is DataRowView row)
+            {
+                //int employeeID = Convert.ToInt32(row.Row["ID"]);
+                //string employeePosition = FindEmployee(employeeID);
+
+                string employeePosition = Convert.ToString(row.Row["Position"]);
+                if (!string.IsNullOrEmpty(employeePosition))
+                {
+                    string query = "select * from " + tableName + " where Position='" + employeePosition + "';";
+                    RefreshDataGridView(query);
+                }
             }
         }
 
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            Form2 averageSalaryForm = new Form2();
+            averageSalaryForm.Show();
+        }
+
+        // Add new employee
         private void AddNewEmployee()
         {
             if (string.IsNullOrEmpty(nameTextBox.Text) ||
@@ -104,80 +127,7 @@ namespace Employees_TestTaskWinFormsApp
             }
         }
 
-        private void SetSelectByPositionComboBoxValues()
-        {
-            connection.ConnectionString = connectionString;
-            command = connection.CreateCommand();
-            try
-            {
-                string query = "select * from " + tableName + ";";
-                command.CommandText = query;
-
-                connection.Open();
-
-                SqlDataReader sqlDataReader = command.ExecuteReader();
-                DataTable globalDataTable = new DataTable();
-                globalDataTable.Load(sqlDataReader);
-
-                selectByPositionComboBox.DisplayMember = "Position";
-                selectByPositionComboBox.ValueMember = "ID";
-                globalDataTable.DefaultView.Sort = "Position";
-                selectByPositionComboBox.DataSource = globalDataTable.DefaultView.ToTable(true, "Position");
-
-                sqlDataReader.Close();
-            }
-            catch (Exception exception)
-            {
-                ShowErrorMessageBox(exception.Message);
-            }
-            finally
-            {
-                command.Dispose();
-                connection.Close();
-            }
-        }
-
-        private void RefreshDataGridView(string query)
-        {
-            connection.ConnectionString = connectionString;
-            command = connection.CreateCommand();
-            try
-            {
-                if (string.IsNullOrEmpty(query))
-                    query = "select * from " + tableName + ";";
-
-                command.CommandText = query;
-
-                connection.Open();
-
-                SqlDataReader sqlDataReader = command.ExecuteReader();
-                DataTable globalDataTable = new DataTable();
-                globalDataTable.Load(sqlDataReader);
-
-                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                dataGridView.ScrollBars = ScrollBars.Both;
-                dataGridView.DataSource = globalDataTable;
-
-                this.dataTable = globalDataTable;
-
-                sqlDataReader.Close();
-            }
-            catch (Exception exception)
-            {
-                ShowErrorMessageBox(exception.Message);
-            }
-            finally
-            {
-                command.Dispose();
-                connection.Close();
-            }
-        }
-
-        private void FindButton_Click(object sender, EventArgs e)
-        {
-            SelectEmployeeRow();
-        }
-
+        // Find Employee using name and last name
         private void SelectEmployeeRow()
         {
             string employeeName = employeeNameFindTextBox.Text;
@@ -222,27 +172,7 @@ namespace Employees_TestTaskWinFormsApp
             }
         }
 
-        private void deleteBtn_Click(object sender, EventArgs e)
-        {
-            if (DeleteSelectedEmployees())
-            {
-                MessageBox.Show("Employee deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                SetSelectByPositionComboBoxValues();
-            }
-
-            RefreshDataGridView(string.Empty);
-        }
-
-        private void CleanFindEmployeeFields()
-        {
-            if (!string.IsNullOrEmpty(employeeNameFindTextBox.Text) ||
-                !string.IsNullOrEmpty(employeeLastNameFindTextBox.Text))
-            {
-                employeeNameFindTextBox.Text = string.Empty;
-                employeeLastNameFindTextBox.Text = string.Empty;
-            }
-        }
-
+        // Delete set of employee records defined by selection in datagridview
         private bool DeleteSelectedEmployees()
         {
             bool result = true;
@@ -265,6 +195,7 @@ namespace Employees_TestTaskWinFormsApp
             return result;
         }
 
+        // Delete one record of employee
         private bool DeleteEmployee(int employeeID)
         {
             bool result = false;
@@ -297,43 +228,109 @@ namespace Employees_TestTaskWinFormsApp
             return result;
         }
 
-        private void refreshButton_Click(object sender, EventArgs e)
+        // Update displaying data in datagridview
+        private void RefreshDataGridView(string query)
         {
-            RefreshDataGridView(string.Empty);
-            var selectedRow = selectByPositionComboBox.SelectedItem;
-            if (selectedRow is DataRowView row)
+            connection.ConnectionString = connectionString;
+            command = connection.CreateCommand();
+            try
             {
-                //int employeeID = Convert.ToInt32(row.Row["ID"]);
-                //string employeePosition = FindEmployee(employeeID);
+                if (string.IsNullOrEmpty(query))
+                    query = "select * from " + tableName + ";";
 
-                string employeePosition = Convert.ToString(row.Row["Position"]);
-                if (!string.IsNullOrEmpty(employeePosition))
-                {
-                    string query = "select * from " + tableName + " where Position='" + employeePosition + "';";
-                    RefreshDataGridView(query);
-                }
+                command.CommandText = query;
+
+                connection.Open();
+
+                SqlDataReader sqlDataReader = command.ExecuteReader();
+                DataTable globalDataTable = new DataTable();
+                globalDataTable.Load(sqlDataReader);
+
+                dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                dataGridView.ScrollBars = ScrollBars.Both;
+                dataGridView.DataSource = globalDataTable;
+
+                this.dataTable = globalDataTable;
+
+                sqlDataReader.Close();
+            }
+            catch (Exception exception)
+            {
+                ShowErrorMessageBox(exception.Message);
+            }
+            finally
+            {
+                command.Dispose();
+                connection.Close();
             }
         }
 
-        private string FindEmployee(int id)
+        private void ShowErrorMessageBox(string message)
         {
-            DataRow[] employees = this.dataTable.Select("ID = " + id);
-            if (employees.Length == 1)
+            string caption = "Error";
+            MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void CleanAddEmployeeTextFields()
+        {
+            if (!string.IsNullOrEmpty(nameTextBox.Text) ||
+                !string.IsNullOrEmpty(lastNameTextBox.Text) ||
+                !string.IsNullOrEmpty(positionTextBox.Text) ||
+                !string.IsNullOrEmpty(yearOfBirthTextBox.Text) ||
+                !string.IsNullOrEmpty(salaryTextBox.Text))
             {
-                return Convert.ToString(employees[0]["Position"]);
+                nameTextBox.Text = string.Empty;
+                lastNameTextBox.Text = string.Empty;
+                positionTextBox.Text = string.Empty;
+                yearOfBirthTextBox.Text = string.Empty;
+                salaryTextBox.Text = string.Empty;
             }
-            return string.Empty;
         }
 
-        private void showDBButton_Click(object sender, EventArgs e)
+
+        // Set values of comboBox for filter by employee positions
+        private void SetSelectByPositionComboBoxValues()
         {
-            RefreshDataGridView(string.Empty);
+            connection.ConnectionString = connectionString;
+            command = connection.CreateCommand();
+            try
+            {
+                string query = "select * from " + tableName + ";";
+                command.CommandText = query;
+
+                connection.Open();
+
+                SqlDataReader sqlDataReader = command.ExecuteReader();
+                DataTable globalDataTable = new DataTable();
+                globalDataTable.Load(sqlDataReader);
+
+                selectByPositionComboBox.DisplayMember = "Position";
+                selectByPositionComboBox.ValueMember = "ID";
+                globalDataTable.DefaultView.Sort = "Position";
+                selectByPositionComboBox.DataSource = globalDataTable.DefaultView.ToTable(true, "Position");
+
+                sqlDataReader.Close();
+            }
+            catch (Exception exception)
+            {
+                ShowErrorMessageBox(exception.Message);
+            }
+            finally
+            {
+                command.Dispose();
+                connection.Close();
+            }
         }
 
-        private void reportBtn_Click(object sender, EventArgs e)
+        private void CleanFindEmployeeFields()
         {
-            Form2 averageSalaryForm = new Form2();
-            averageSalaryForm.Show();
+            if (!string.IsNullOrEmpty(employeeNameFindTextBox.Text) ||
+                !string.IsNullOrEmpty(employeeLastNameFindTextBox.Text))
+            {
+                employeeNameFindTextBox.Text = string.Empty;
+                employeeLastNameFindTextBox.Text = string.Empty;
+            }
         }
+
     }
 }
